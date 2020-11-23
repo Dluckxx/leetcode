@@ -6,6 +6,7 @@
 #define LEETCODE_OUTPUT_H
 
 #include <iostream>
+#include "data.h"
 
 using namespace std;
 
@@ -40,13 +41,14 @@ public:
      * @param t
      */
     template<typename T>
-    void print(const T &t);
+    static void print(const T &t);
 
     template<typename T>
-    void print(const vector<T> &t);
+    static void print(const vector<T> &t);
 
-    template<>
-    void print(const bool &t);
+    static void print(const bool &t);
+
+    static void print(ListNode *const &head);
 
 private:
     int index;
@@ -89,10 +91,21 @@ void Output::print(const vector<T> &t) {
     cout << "]";
 }
 
-template<>
 void Output::print(const bool &t) {
     if (t) cout << "true";
     else cout << "false";
+}
+
+void Output::print(ListNode *const &head) {
+    cout << "[";
+    ListNode *node = head;
+    while (node != nullptr) {
+        cout << node->val;
+        if (node->next != nullptr)
+            cout << ",";
+        node = node->next;
+    }
+    cout << "]";
 }
 
 #endif //LEETCODE_OUTPUT_H

@@ -19,38 +19,18 @@
 #include <iostream>
 #include <iomanip>
 #include "output.h"
+#include "data.h"
 
 using namespace std;
 
-struct __unused ListNode {
-    __unused int val;
-    __unused ListNode *next;
-
-    __unused explicit ListNode(int x) : val(x), next(nullptr) {}
-};
-
-struct __unused TreeNode {
-    __unused int val;
-    __unused TreeNode *left;
-    __unused TreeNode *right;
-
-    __unused explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-};
-
-struct __unused Node {
-    __unused int val;
-    __unused Node *left;
-    __unused  Node *right;
-    __unused Node *next;
-};
 
 class Solution {
 public:
 #define example fun // 修改宏中的名称（example）和函数名一致
 
-    int example(int parm) {
-        // 此处编写题解代码
-        return parm;
+    int example(int a) {
+        // 这个函数是题解函数
+        return a;
     }
 
     void operator()();
@@ -59,7 +39,7 @@ public:
 
 private:
 // 测试用例参数，请勿删除多余参数，需要时直接赋值即可
-    int i1{1};
+    int i1 = 1;
     int i2;
     int i3;
     int i4;
@@ -76,8 +56,9 @@ void Solution::operator()() {
     // 运行
     clock_t start, end;
     start = clock();
-    for (int i = 0; i < 1000; ++i)
+    for (int i = 0; i < 1000; ++i) {
         _ret = fun(i1); // 此处注意修改参数数量
+    }
     end = clock();
     // 输出结果
     cout << *this;
