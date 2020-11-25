@@ -50,6 +50,8 @@ public:
 
     static void print(ListNode *const &head);
 
+    static void print(TreeNode *const &root);
+
 private:
     int index;
     int parmNum;
@@ -106,6 +108,11 @@ void Output::print(ListNode *const &head) {
         node = node->next;
     }
     cout << "]";
+}
+
+void Output::print(TreeNode *const &root) {
+    auto container = root->toVector();
+    print(container);
 }
 
 #endif //LEETCODE_OUTPUT_H
